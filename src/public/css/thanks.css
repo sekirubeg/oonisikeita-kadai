@@ -1,0 +1,71 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f6;
+    /* 背景を淡いグレーに */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 画面全体を縦方向に中央揃え */
+}
+
+/* メインコンテンツ */
+.thankyou_content {
+    text-align: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 背景の大きな "Thank you" */
+.thankyou_title {
+    font-size: 120px;
+    /* 大きな文字 */
+    color: rgba(0, 0, 0, 0.05);
+    /* 薄いグレー（透明度を高める） */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    /* 改行を防ぐ */
+    z-index: -1;
+    /* 背景に移動 */
+}
+
+/* メッセージのスタイル */
+.thankyou_message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8b6f56;
+    /* ブラウンカラー */
+    margin-bottom: 20px;
+    z-index: 1;
+    /* 背景より前面に表示 */
+}
+
+/* ボタンのスタイル */
+.thankyou_button {
+    margin-top: 20px;
+}
+
+.button_home {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #8b6f56;
+    /* ブラウンカラー */
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button_home:hover {
+    background-color: #755a45;
+    /* ホバー時の濃いブラウン */
+}

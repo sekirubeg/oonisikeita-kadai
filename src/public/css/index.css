@@ -1,0 +1,168 @@
+¥/* リセットCSS */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 全体の背景と基本設定 */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #8b7961;
+}
+
+/* メインコンテンツ */
+.contact-form_content {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form_heading h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6c5a4c;
+}
+
+/* フォーム全体 */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form_group-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    color: #6c5a4c;
+}
+
+.form_label-item {
+    font-weight: bold;
+}
+
+.form_label-required {
+    color: red;
+    font-size: 12px;
+}
+
+/* 入力フィールド */
+.form_input-text input,
+.form_input-textarea textarea,
+.form_input-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form_input-text input {
+    margin-right: 10px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* ラジオボタン */
+.form_input-radio {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.form_input-radio input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* 電話番号の横並び */
+.form_input-text input[type="text"] {
+    display: inline-block;
+    width: calc(33% - 10px);
+}
+
+/* ボタン */
+.form__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form_button-submit {
+    background-color: #8b7961;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form_button-submit:hover {
+    background-color: #6c5a4c;
+}
+
+/* エラー表示（仮） */
+.form__error {
+    font-size: 12px;
+    color: red;
+    display: none;
+    /* バリデーション実装後に表示 */
+}
+
+/* プレスホルダー */
+::placeholder {
+    color: #aaa;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-form_content {
+        padding: 20px;
+    }
+
+    .form_input-text input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

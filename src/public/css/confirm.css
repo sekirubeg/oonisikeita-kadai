@@ -1,0 +1,139 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f6;
+    /* 背景色を薄いグレーに */
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    /* ヘッダー下の境界線 */
+    padding: 20px;
+    text-align: center;
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b6f56;
+    /* ブラウンカラー */
+    text-decoration: none;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    /* 中央揃え */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 軽いシャドウ */
+    border-radius: 8px;
+    /* 角丸 */
+}
+
+/* 見出し */
+.confirm_heading h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8b6f56;
+    /* ブラウンカラー */
+}
+
+/* テーブル全体のスタイル */
+.confirm-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.confirm-table__row{
+    border-bottom: 1px solid #ddd;
+    /* 行間の線 */
+}
+
+.confirm-table__header {
+    background-color: #d3bca4;
+    /* ブラウン背景 */
+    color: #fff;
+    /* 白い文字 */
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    width: 30%;
+    /* ヘッダー部分の幅 */
+}
+
+.confirm-table__text {
+    padding: 10px;
+    background-color: #f9f7f6;
+    /* セル背景色を薄いグレー */
+    color: #333;
+    text-align: left;
+}
+
+/* 入力フィールドのスタイル（読み取り専用に見せる） */
+.confirm-table__text input {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    pointer-events: none;
+    /* 編集不可 */
+    display: inline-block;
+}
+
+/* ボタンのスタイル */
+.confirm__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.confirm__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm__button-submit {
+    background-color: #8b6f56;
+    /* ブラウンボタン */
+    color: #fff;
+}
+
+.confirm__button-submit:hover {
+    background-color: #755a45;
+    /* ホバー時の濃いブラウン */
+}
+
+.confirm__button-edit {
+    background-color: #ddd;
+    /* グレーボタン */
+    color: #333;
+}
+
+.confirm__button-edit:hover {
+    background-color: #bbb;
+    /* ホバー時の濃いグレー */
+}
+.name-container {
+    display: flex;
+    gap:5px;
+}
+.name-container input {
+    width: auto;
+    /* 必要最小限の幅 */
+}
