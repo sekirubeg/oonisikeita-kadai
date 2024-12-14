@@ -1,0 +1,109 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f1ea;
+    /* 背景色 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* コンテナ */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    /* フォーム背景色 */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* シャドウで浮かせる効果 */
+}
+
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    color: #6e553f;
+    /* タイトルの色 */
+    margin: 0;
+}
+
+.login-link {
+    font-size: 14px;
+    color: #6e553f;
+    text-decoration: none;
+    border: 1px solid #6e553f;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.login-link:hover {
+    background-color: #6e553f;
+    color: #fff;
+}
+
+/* フォーム */
+.form-container {
+    text-align: center;
+}
+
+.form-title {
+    font-size: 20px;
+    color: #6e553f;
+    margin-bottom: 20px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #6e553f;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #aaa;
+    /* プレースホルダーの色 */
+}
+
+/* 登録ボタン */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #6e553f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #5a4733;
+}
