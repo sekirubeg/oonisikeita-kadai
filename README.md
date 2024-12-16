@@ -11,6 +11,10 @@ Dockerビルド
     2.docker-compose up --d build
 
 *MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて、docker-compose.ymlファイルを編集してください。
+*「The stream or file could not be opened」というエラーが発生した場合は
+下記コマンドで権限設定をお願いします
+
+sudo chmod -R 777 src/storage
 
 Laravel環境構築
 
