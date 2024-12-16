@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AuthController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,5 @@ Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
+
+Route::delete('/contacts/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');

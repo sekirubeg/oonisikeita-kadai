@@ -20,7 +20,7 @@ class ContactController extends Controller
         unset($contact['tel1'], $contact['tel2'], $contact['tel3']);
         return view('confirm', compact('contact'));
     }
-    public function store(Request $request){
+    public function store(ContactRequest $request){
         $validatedData = $request -> only(['first_name', 'last_name', 'gender' , 'email', 'tel', 'address', 'building','category_id' ,'detail']);
         $genderMap = [
         '男性' => 1,
@@ -41,7 +41,7 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
-    public function admin(Request $request)
+    public function admin(ContactRequest $request)
     {
         // 検索やフィルタリングがある場合（オプション）
         $query = Contact::query();
@@ -57,7 +57,9 @@ class ContactController extends Controller
         if ($request->filled('gender')) {
             $query->where('gender', $request->gender);
         }
-
+        if ($request->filled('date')) {
+        $query->whereDate('created_at', $request->date);
+    }
         // カテゴリフィルタリング
         if ($request->filled('category_id')) {
             $query->where('category_id', $request->category_id);
@@ -69,4 +71,14 @@ class ContactController extends Controller
         // ビューにデータを渡す
         return view('admin', compact('contacts'));
     }
+    public function destroy($id)
+    {
+        // データを削除
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        // 管理画面にリダイレクト
+        return redirect()->route('admin')->with('success', 'データを削除しました。');
+    }
+
 }
