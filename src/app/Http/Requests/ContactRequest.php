@@ -29,9 +29,9 @@ class ContactRequest extends FormRequest
             'last_name'       => 'required|string|max:255', // 名
             'gender'          => 'required|in:男性,女性,その他', // 性別（選択）
             'email'           => 'required|email', // メール形式
-            'tel1'            => 'required|digits:3', // 電話番号（最初の3桁）
-            'tel2'            => 'required|digits:4', // 電話番号（中間4桁）
-            'tel3'            => 'required|digits:4', // 電話番号（最後の4桁）
+             'tel1'            => 'required|digits_between:1,5', // 電話番号（最初の3桁）
+            'tel2'            => 'required|digits_between:1,5', // 電話番号（中間4桁）
+            'tel3'            => 'required|digits_between:1,5', // 電話番号（最後の4桁）
             'address'         => 'required|string|max:255', // 住所
             'category_id'     => 'required|integer', // お問い合わせの種類（選択）
             'detail'          => 'required|string|max:120', // お問い合わせ内容（120文字以内）
@@ -47,11 +47,11 @@ class ContactRequest extends FormRequest
             'email.required'        => 'メールアドレスを入力してください',
             'email.email'           => 'メールアドレスはメール形式で入力してください',
             'tel1.required'         => '電話番号を入力してください',
-            'tel1.digits'           => '電話番号は5桁までの数字で入力してください',
+            'tel1.digits_between'           => '電話番号は5桁までの数字で入力してください',
             'tel2.required'         => '電話番号を入力してください',
-            'tel2.digits'           => '電話番号は5桁までの数字で入力してください',
+            'tel2.digits_between'           => '電話番号は5桁までの数字で入力してください',
             'tel3.required'         => '電話番号を入力してください',
-            'tel3.digits'           => '電話番号は5桁までの数字で入力してください',
+            'tel3.digits_between'           => '電話番号は5桁までの数字で入力してください',
             'address.required'      => '住所を入力してください',
             'category_id.required'  => 'お問い合わせの種類を選択してください',
             'detail.required'       => 'お問い合わせ内容を入力してください',
