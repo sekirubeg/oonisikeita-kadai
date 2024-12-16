@@ -20,7 +20,7 @@ class ContactController extends Controller
         unset($contact['tel1'], $contact['tel2'], $contact['tel3']);
         return view('confirm', compact('contact'));
     }
-    public function store(ContactRequest $request){
+    public function store(Request $request){
         $validatedData = $request -> only(['first_name', 'last_name', 'gender' , 'email', 'tel', 'address', 'building','category_id' ,'detail']);
         $genderMap = [
         '男性' => 1,
