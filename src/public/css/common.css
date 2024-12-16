@@ -1,0 +1,45 @@
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.header__logo {
+    font-family: 'Inika', serif;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    /* アンダーラインを消す */
+    color: #8b7961;
+}
+/* 全体の背景設定 */
+body {
+    margin: 0;
+    /* 余白をリセット */
+    padding: 0;
+    /* パディングをリセット */
+    box-sizing: border-box;
+    /* ボックスモデルを統一 */
+    background-color: #f9f9f9;
+    /* 画像と同じ薄い灰色の背景色 */
+    color: #333;
+    /* テキストの基本色 */
+}
+.login-link {
+    font-size: 14px;
+    color: #6e553f;
+    text-decoration: none;
+    border: 1px solid #6e553f;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.login-link:hover {
+    background-color: #6e553f;
+    color: #fff;
+}

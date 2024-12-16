@@ -1,55 +1,46 @@
-¥/* リセットCSS */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li,
-input,
-textarea,
-select,
-button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
 
-/* 全体の背景と基本設定 */
-body {
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.header {
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header__logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #8b7961;
-}
-
-/* メインコンテンツ */
 .contact-form_content {
-    max-width: 800px;
     margin: 50px auto;
+    /* 上下に余白、左右を中央揃え */
+    padding: 30px;
     background-color: #fff;
-    padding: 30px 40px;
+    /* フォームの背景色（白） */
     border-radius: 8px;
+    /* フォームの角を丸く */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 軽い影をつける */
 }
+
+/* 入力フィールド */
+
+/* フォーカス時のスタイル */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    /* フォーカス時の青枠を消す */
+    border-color: #8b7961;
+    /* フォーカス時の枠線色を変更 */
+    background-color: #eaeaea;
+    /* フォーカス時に背景色を少し濃く */
+}
+
+
+
 
 .contact-form_heading h2 {
+    font-family: 'Inika', serif;
+    /* フォントを Inika に設定 */
     font-size: 28px;
+    /* 適切なサイズ */
+    font-weight: 300;
+    /* 太さを軽く（300: Light） */
+    color: #8b7961;
+    /* 色を調整 */
     text-align: center;
+    /* 中央揃え */
     margin-bottom: 30px;
-    color: #6c5a4c;
+    /* 下部に余白を追加 */
 }
 
 /* フォーム全体 */
@@ -57,20 +48,24 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 50%;
+    margin-left: 330px;
 }
 
 .form_group {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .form_group-title {
+    flex-basis: 40%;
+    /* ラベル部分の固定幅 */
+    font-size: 14px;
+    color: #6c5a4c;
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 16px;
-    color: #6c5a4c;
 }
 
 .form_label-item {
@@ -79,13 +74,51 @@ body {
 
 .form_label-required {
     color: red;
+    margin-right: 60px;
+}
+
+.form_group-content {
+    flex-grow: 1;
+    /* 入力部分の幅を可変に */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    width: 70%;
+        /* 入力フィールド部分の横幅を固定 */
+}
+.select_box{
+    width: 60%;
+    color: #6c5a4c;
+    color: rgba(108, 90, 76, 0.5);
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* フィールドとエラーメッセージを縦並び */
+    gap: 5px;
+    /* フィールドとエラーメッセージの間隔 */
+    flex: 1;
+    /* 均等な幅を確保 */
+
+}
+.form__error {
+    color: red;
+    /* エラーメッセージの文字色 */
     font-size: 12px;
+    /* 小さめのフォントサイズ */
+    margin: 0;
+    /* 余白をリセット */
+}
+
+.gender{
+    color: #6c5a4c;
 }
 
 /* 入力フィールド */
-.form_input-text input,
-.form_input-textarea textarea,
-.form_input-select select {
+input,
+textarea,
+select {
     width: 100%;
     padding: 10px;
     font-size: 14px;
@@ -93,76 +126,95 @@ body {
     border-radius: 4px;
 }
 
-.form_input-text input {
-    margin-right: 10px;
-}
-
 textarea {
     height: 100px;
     resize: none;
 }
 
-/* ラジオボタン */
+/* 半幅入力フィールド */
+.form_input-half {
+    width: calc(95% - 10px);
+    /* 横並びの2つのフィールドを調整 */
+}
+
+.form_input-tel {
+    width: calc(33.33% - 5px);
+    /* 電話番号入力フィールド */
+}
+
+/* 性別選択（ラジオボタンと文字を横並びに） */
 .form_input-radio {
     display: flex;
-    gap: 15px;
+    /* 横並びにする */
+    gap: 20px;
+    /* 各項目間に余白を追加 */
     align-items: center;
+    /* ラジオボタンと文字を垂直方向に中央揃え */
 }
 
-.form_input-radio input[type="radio"] {
-    margin-right: 5px;
+.form_input-radio label {
+    display: flex;
+    /* ラジオボタンと文字を横並びに */
+    align-items: center;
+    /* ラジオボタンと文字を垂直方向に中央揃え */
+    gap: 5px;
+    /* ラジオボタンと文字の間に余白を設定 */
+    font-size: 14px;
+    /* 文字のサイズ */
+    color: #333;
+    /* 文字色 */
 }
 
-/* 電話番号の横並び */
-.form_input-text input[type="text"] {
-    display: inline-block;
-    width: calc(33% - 10px);
+input[type="radio"] {
+    accent-color: #8b7961;
+    /* ラジオボタンの色を設定 */
+    width: 16px;
+    height: 16px;
 }
 
-/* ボタン */
+
+/* ボタン部分を中央揃え */
 .form__button {
     display: flex;
+    /* フレックスボックスを使用 */
     justify-content: center;
+    /* 水平方向に中央揃え */
     margin-top: 20px;
+    /* 上部に少し余白を追加 */
 }
 
+/* ボタンスタイル */
 .form_button-submit {
     background-color: #8b7961;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    /* ボタンの背景色 */
+    color: white;
+    /* ボタン文字の色 */
     padding: 10px 20px;
+    /* ボタン内の余白 */
+    font-size: 16px;
+    /* 文字サイズ */
     border: none;
+    /* ボーダーを削除 */
     border-radius: 4px;
+    /* 角丸のデザイン */
     cursor: pointer;
+    /* カーソルをポインタに変更 */
     transition: background-color 0.3s ease;
+    /* ホバー時のスムーズな色変更 */
 }
 
 .form_button-submit:hover {
     background-color: #6c5a4c;
+    /* ホバー時の背景色 */
 }
-
-/* エラー表示（仮） */
-.form__error {
-    font-size: 12px;
-    color: red;
-    display: none;
-    /* バリデーション実装後に表示 */
-}
-
-/* プレスホルダー */
+/* プレースホルダーの文字色を透かし風に */
 ::placeholder {
-    color: #aaa;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .contact-form_content {
-        padding: 20px;
-    }
-
-    .form_input-text input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+    color: rgba(108, 90, 76, 0.5);
+    /* Contact の文字色に透明度50%を設定 */
+    font-size: 14px;
+    /* プレースホルダーの文字サイズ */
+    font-weight: normal;
+    /* フォントウェイトを通常に設定 */
+    opacity: 1;
+    /* 一部ブラウザで透明度がかかる場合に完全表示 */
 }

@@ -1,0 +1,53 @@
+.admin-container {
+    padding: 20px;
+    background-color: #f7f1ea;
+}
+
+.admin-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6e553f;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input,
+.search-form select,
+.search-form button,
+.search-form .reset-button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.contact-table th,
+.contact-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-table th {
+    background-color: #6e553f;
+    color: #fff;
+}
+
+.detail-button {
+    color: #6e553f;
+    text-decoration: none;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
