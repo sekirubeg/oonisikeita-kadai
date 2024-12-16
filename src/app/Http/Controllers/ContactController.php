@@ -64,7 +64,7 @@ class ContactController extends Controller
         }
 
         // データ取得とページネーション
-        $contacts = $query->paginate(10);
+        $contacts = $query->paginate(7);
 
         // ビューにデータを渡す
         return view('admin', compact('contacts'));

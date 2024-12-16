@@ -7,7 +7,7 @@
 
 Dockerビルド
 
-    1.git clone 
+    1.git clone https://github.com/sekirubeg/oonisikeita-kadai.git
     2.docker-compose up -d build
 
 *MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて、docker-compose.ymlファイルを編集してください。

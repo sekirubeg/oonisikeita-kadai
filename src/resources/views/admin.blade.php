@@ -1,7 +1,27 @@
 @extends('layouts.app')
+<style>
+  th {
+    color: white;
+    padding: 5px 40px;
+  }
+
+
+  td {
+    padding: 25px 40px;
+    text-align: center;
+  }
+
+  svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+  }
+</style>
+
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
+
 @section('content')
 <div class="admin-container">
     <h1 class="admin-title">Admin</h1>
@@ -23,10 +43,13 @@
             <option value="4" {{ request('category_id') == 4 ? 'selected' : '' }}>ショップへのお問い合わせ</option>
             <option value="5" {{ request('category_id') == 5 ? 'selected' : '' }}>その他</option>
         </select>
+        <!-- 日付検索 -->
+        <input type="date" name="date" value="{{ request('date') }}">
         <button type="submit">検索</button>
-        <a href="{{ route('contacts.index') }}" class="reset-button">リセット</a>
+        <a href="{{ route('admin') }}" class="reset-button">リセット</a>
     </form>
-
+ <!-- エクスポートボタン -->
+    <button class="btn-export">エクスポート</button>
     <!-- テーブル -->
     <table class="contact-table">
         <thead>
@@ -41,7 +64,7 @@
         <tbody>
             @foreach ($contacts as $contact)
             <tr>
-                <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
+                <td>{{ $contact->first_name }} {{ $contact->last_name }}</td>
                 <td>
                     @if ($contact->gender == 1) 男性
                     @elseif ($contact->gender == 2) 女性
@@ -58,7 +81,10 @@
                         @default その他
                     @endswitch
                 </td>
-                <td><a href="#" class="detail-button">詳細</a></td>
+                <!-- 詳細ページに遷移する -->
+                <td>
+                    <a href="{{ route('admin', ['detail_id' => $contact->id]) }}" class="detail-button">詳細</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
@@ -70,4 +96,3 @@
     </div>
 </div>
 @endsection
-
