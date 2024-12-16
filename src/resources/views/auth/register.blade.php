@@ -20,7 +20,7 @@
         <div class="register-container">
             <div class="form-container">
                 <h2 class="form-title">Register</h2>
-                <form method="POST" action="/register">
+                <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <!-- 名前 -->
                     <div class="form-group">

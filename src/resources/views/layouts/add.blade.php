@@ -13,7 +13,14 @@
         <div class="header__inner">
             <a href="/" class="header__logo">FashionablyLate</a>
         </div>
-     
+        @if (Auth::check())
+        <li class="header-nav__item">
+            <form action="/logout" method="post">
+            @csrf
+            <button class="header-nav__button">ログアウト</button>
+            </form>
+        </li>
+        @endif
     </header>
 
     <main>

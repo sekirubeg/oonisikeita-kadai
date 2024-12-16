@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.add')
 <style>
   th {
     color: white;
@@ -94,5 +94,31 @@
     <div class="pagination">
         {{ $contacts->links() }}
     </div>
+    <!-- モーダルウィンドウ -->
+    @if (request('detail_id'))
+        @php
+            $selectedContact = $contacts->where('id', request('detail_id'))->first();
+        @endphp
+        @if ($selectedContact)
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-button" onclick="window.location='{{ route('admin') }}'">&times;</button>
+                <table class="detail-table">
+                    <tr><th>お名前</th><td>{{ $selectedContact->first_name }} {{ $selectedContact->last_name }}</td></tr>
+                    <tr><th>性別</th><td>{{ $selectedContact->gender == 1 ? '男性' : ($selectedContact->gender == 2 ? '女性' : 'その他') }}</td></tr>
+                    <tr><th>メールアドレス</th><td>{{ $selectedContact->email }}</td></tr>
+                    <tr><th>住所</th><td>{{ $selectedContact->address }}</td></tr>
+                    <tr><th>建物名</th><td>{{ $selectedContact->building }}</td></tr>
+                    <tr><th>お問い合わせの種類</th><td>{{ $selectedContact->category_id }}</td></tr>
+                    <tr><th>お問い合わせ内容</th><td>{{ $selectedContact->detail }}</td></tr>
+                </table>
+                <form method="POST" action="{{ route('contact.destroy', $selectedContact->id) }}" style="margin-top: 20px;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="delete-button">削除</button>
+            </div>
+        </div>
+        @endif
+    @endif
 </div>
 @endsection
