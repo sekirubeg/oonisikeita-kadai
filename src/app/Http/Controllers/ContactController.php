@@ -41,7 +41,7 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
-    public function admin(ContactRequest $request)
+    public function admin(Request $request)
     {
         // 検索やフィルタリングがある場合（オプション）
         $query = Contact::query();
@@ -49,8 +49,8 @@ class ContactController extends Controller
         // 名前やメールアドレス検索
         if ($request->filled('search')) {
             $query->where('first_name', 'like', '%' . $request->search . '%')
-                  ->orWhere('last_name', 'like', '%' . $request->search . '%')
-                  ->orWhere('email', 'like', '%' . $request->search . '%');
+                ->orWhere('last_name', 'like', '%' . $request->search . '%')
+                ->orWhere('email', 'like', '%' . $request->search . '%');
         }
 
         // 性別フィルタリング
